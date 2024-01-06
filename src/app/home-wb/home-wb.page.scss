@@ -1,0 +1,23 @@
+ion-item {
+  margin: 10px;
+  width: 40%;
+}
+ion-button {
+  cursor: pointer;
+  --border-radius: 1px;
+  color: black;
+  --border-color: #2dd36f;
+}
+ion-button:hover {
+  background-color: #06aa9b;
+  color: white;
+}
+@media only screen and (max-width: 600px) {
+  ion-item {
+    margin: 10px;
+    width: 85%;
+  }
+  ion-button {
+    width: 43%;
+  }
+}

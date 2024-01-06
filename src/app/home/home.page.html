@@ -1,0 +1,122 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title> Suraksha-MITR Kerala </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <form [formGroup]="data">
+    <ion-row
+      style="
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+      "
+    >
+      <img
+        style="height: 30%; border-radius: 20%"
+        src="https://kingstrackimages.s3.ap-southeast-1.amazonaws.com/suraksha-mitr-logo.png"
+      />
+      <ion-item fill="outline">
+        <ion-label style="color: black">ImeiNo:</ion-label>
+        <ion-input
+          formControlName="imei"
+          placeholder="Please enter the imeino"
+        ></ion-input>
+      </ion-item>
+
+      <ion-note *ngIf="imei?.invalid && (imei?.dirty || imei?.touched)"
+        >Please enter the imeino
+      </ion-note>
+
+      <ion-item fill="outline">
+        <ion-label style="color: black">Minutes:</ion-label>
+        <ion-input
+          type="number"
+          formControlName="minutes"
+          placeholder="Please enter the minutes"
+        ></ion-input>
+      </ion-item>
+
+      <ion-note *ngIf="minutes?.invalid && (minutes?.dirty || minutes?.touched)"
+        >Please enter the minutes
+      </ion-note>
+
+      <ion-item fill="outline">
+        <ion-label style="color: black">Latitude:</ion-label>
+        <ion-input
+          formControlName="lat"
+          placeholder="Please enter the latitude"
+        ></ion-input>
+      </ion-item>
+      <ion-note *ngIf="lat?.invalid && (lat?.dirty || lat?.touched)"
+        >Please enter the latitude
+      </ion-note>
+      <ion-item fill="outline">
+        <ion-label style="color: black">Longitude:</ion-label>
+        <ion-input
+          formControlName="long"
+          placeholder="Please enter the longitude"
+        ></ion-input>
+      </ion-item>
+      <ion-note *ngIf="long?.invalid && (long?.dirty || long?.touched)"
+        >Please enter the longitude
+      </ion-note>
+      <ion-row style="display: flex; justify-content: center">
+        <ion-button
+          [disabled]="!data.valid"
+          (click)="push()"
+          fill="outline"
+          style="margin-top: 10px"
+        >
+          Push Data
+        </ion-button>
+
+        <ion-button
+          [disabled]="!data.valid"
+          (click)="stopPushing()"
+          fill="outline"
+          style="margin-top: 10px"
+        >
+          Stop Data
+        </ion-button>
+
+        <ion-button
+          [disabled]="!data.valid"
+          (click)="emergencyOn()"
+          fill="outline"
+          style="margin-top: 10px"
+        >
+          Emergency ON
+        </ion-button>
+
+        <ion-button
+          [disabled]="!data.valid"
+          (click)="emergencyOff()"
+          fill="outline"
+          style="margin-top: 10px"
+        >
+          Emergency Off
+        </ion-button>
+
+        <ion-button
+          [disabled]="!data.valid"
+          (click)="ignitionyOn()"
+          fill="outline"
+          style="margin-top: 10px"
+        >
+          Ignition ON
+        </ion-button>
+
+        <ion-button
+          [disabled]="!data.valid"
+          (click)="ignitionyOff()"
+          fill="outline"
+          style="margin-top: 10px"
+        >
+          Ignition Off
+        </ion-button>
+      </ion-row>
+    </ion-row>
+  </form>
+</ion-content>
